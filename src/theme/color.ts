@@ -1,4 +1,4 @@
-export const color = {
+const color = {
     white: '#FFFFFF',
     black: '#000000',
     primary: {
@@ -7,6 +7,8 @@ export const color = {
     },
     error: '#F2706A',
 };
+
+export default color;
 
 // export const color = {
 //     primary: '#262758',

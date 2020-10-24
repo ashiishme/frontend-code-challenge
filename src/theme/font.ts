@@ -1,4 +1,4 @@
-export const font = {
+const font = {
     size: {
         xxsmall: 10,
         xsmall: 12,
@@ -19,3 +19,5 @@ export const font = {
         bold: 700,
     },
 };
+
+export default font;
