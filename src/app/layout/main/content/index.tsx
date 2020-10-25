@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
+import { useContentHeaderContext } from 'app/hooks';
+
 import ContentHeader from 'app/components/content/header';
 import ContentBody from 'app/components/content/body';
 import PackageList from 'app/components/content/body/package';
-import { useContentHeaderContext } from 'app/hooks';
+import Referral from 'app/components/content/body/referral';
 
 const SectionContent = styled.div`
     margin-top: 40px;
@@ -21,7 +23,7 @@ const Content: FC = () => {
                     {context === 'packages' ? (
                         <PackageList />
                     ) : context === 'referral' ? (
-                        <h1>Referral</h1>
+                        <Referral />
                     ) : (
                         <strong>No content found</strong>
                     )}
