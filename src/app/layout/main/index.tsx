@@ -8,7 +8,7 @@ import { ContentHeaderContext } from 'app/hooks';
 const Main: FC = () => {
     return (
         <main>
-            <section>
+            <section className='app-section section-pad-b'>
                 <Hero />
                 <SectionCard />
                 <ContentHeaderContext.Provider
