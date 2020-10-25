@@ -65,15 +65,6 @@ export const JimmyPageIcons = styled.ul`
 
     svg {
         height: 100%;
+        fill: #ffffff;
     }
 `;
-
-/**
- * // .a {
-//     fill: #fff;
-//     font-size: 12px;
-//     font-family: Inter-Bold,
-//         Inter;
-//     font-weight: 700;
-// }
- */

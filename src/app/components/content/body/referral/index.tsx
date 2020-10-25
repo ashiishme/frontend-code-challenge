@@ -27,7 +27,7 @@ const ReferFormRow = styled.div`
 const ReferFormField = styled.div`
     justify-content: space-between;
 
-    :first-child {
+    :first-of-type {
         margin-right: 20px;
     }
 

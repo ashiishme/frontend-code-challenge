@@ -22,7 +22,6 @@ const SectionDescription = styled.div`
 
 const ContentHeader: FC = () => {
     const { title, description } = useContentHeaderContext();
-    console.log(stripTags(description, '<strong>'));
     return (
         <div className='inner-section-head'>
             <SectionTitle className='package-section-title'>

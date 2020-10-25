@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
+import { ReactComponent as RightArrowSVG } from 'assets/svg/right-arrow.svg';
+
 const CardContainer = styled.div`
     width: 328px;
     background: #ffffff;
@@ -47,7 +49,9 @@ const CardBodyTitle = styled.div`
 
 const CardBodyIcon = styled.div`
     svg {
-        color: #555555;
+        fill: #3d3fa8;
+        font-size: 12px;
+        font-weight: 700;
     }
 `;
 
@@ -85,18 +89,7 @@ const Card: FC<{
                             <h4>{props.title}</h4>
                         </CardBodyTitle>
                         <CardBodyIcon className='card-body-icon'>
-                            <svg
-                                xmlns='http://www.w3.org/2000/svg'
-                                width='17'
-                                height='15'
-                                viewBox='0 0 17 15'
-                            >
-                                <text className='a' transform='translate(0 12)'>
-                                    <tspan x='0' y='0'>
-                                        —&gt;
-                                    </tspan>
-                                </text>
-                            </svg>
+                            <RightArrowSVG />
                         </CardBodyIcon>
                     </CardBodyTop>
                     <CardBodyText className='card-body-text'>
