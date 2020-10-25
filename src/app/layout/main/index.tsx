@@ -13,16 +13,20 @@ const Main: FC = () => {
                 <SectionCard />
                 <ContentHeaderContext.Provider
                     value={{
-                        title: 'hello there',
-                        description: 'Hi there',
+                        title: 'Recommended Tour Packages',
+                        description:
+                            'These recommendations are based on your profile information',
+                        context: 'packages',
                     }}
                 >
                     <Content />
                 </ContentHeaderContext.Provider>
                 <ContentHeaderContext.Provider
                     value={{
-                        title: 'hello there 2',
-                        description: 'Hi there 2',
+                        title: 'Refer and Earn',
+                        description:
+                            'Add your referral and earn <strong>5$</strong> after they sign up',
+                        context: 'referral',
                     }}
                 >
                     <Content />
