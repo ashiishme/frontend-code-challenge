@@ -5,6 +5,7 @@ export const ReferFormField = styled.div`
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
+    transition: all 0.5s ease-in-out;
 
     :first-of-type {
         margin-right: 20px;
@@ -15,6 +16,18 @@ export const ReferFormField = styled.div`
         margin-bottom: 8px;
         transform: translateY(-8px);
         color: #3c498a;
+    }
+
+    .is-error {
+        color: #f04d46;
+        border-color: #f04d46 !important;
+    }
+
+    .err-msg {
+        font-size: 10px;
+        color: #f04d46;
+        margin-top: -4px;
+        margin-bottom: 10px;
     }
 
     input {

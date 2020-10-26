@@ -14,6 +14,7 @@ export const FormSelect = styled.button`
     border-radius: 4px;
     padding: 0 16px 8px 16px;
     text-align: left;
+    margin-bottom: 10px;
 
     span {
         display: block;

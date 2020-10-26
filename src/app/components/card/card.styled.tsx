@@ -5,6 +5,7 @@ export const CardContainer = styled.div`
     background: #ffffff;
     box-shadow: 0px 5px 10px #a9a9a933;
     border-radius: 4px;
+    cursor: pointer;
 `;
 
 export const CardWrapper = styled.div`

@@ -16,7 +16,7 @@ const items = [
     { value: "Don't Specify" },
 ];
 
-const Select: FC = ({ label, register, type, name }: any) => {
+const Select: FC = ({ label, register, type, name, errors }: any) => {
     const [selectItem, setSelectItem] = useState<any>('');
 
     const selectHandler = (selection: any) => {
@@ -44,25 +44,24 @@ const Select: FC = ({ label, register, type, name }: any) => {
                         >
                             {label}
                         </FormSelectLabel>
-                        <div>
-                            <FormSelect
-                                ref={register}
-                                id="gender"
-                                name={name}
-                                value={selectItem}
-                                type={type}
-                                className="dropdown"
-                                {...getToggleButtonProps()}
-                            >
-                                <span>
-                                    {selectItem !== ''
-                                        ? selectItem
-                                        : isOpen
-                                        ? 'Select item...'
-                                        : ''}
-                                </span>
-                            </FormSelect>
-                        </div>
+                        <FormSelect
+                            ref={register}
+                            id="gender"
+                            name={name}
+                            value={selectItem}
+                            type={type}
+                            className="dropdown"
+                            {...getToggleButtonProps()}
+                        >
+                            <span>
+                                {selectItem !== ''
+                                    ? selectItem
+                                    : isOpen
+                                    ? 'Select item...'
+                                    : ''}
+                            </span>
+                        </FormSelect>
+                        {errors && <p className="err-msg">{errors.message}</p>}
                         <FormSelectListWrapper>
                             {isOpen ? (
                                 <div className="dropdown">

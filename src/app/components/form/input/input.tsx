@@ -3,18 +3,15 @@ import { ReferFormField } from 'app/components/styled';
 
 const Input: FC = (props: any) => {
     const [focus, setFocus] = useState({ isFocused: false, length: 0 });
-
+    const isFocused = focus.isFocused || focus.length > 0 ? 'is-focused' : '';
+    const isError = props.errors ? 'is-error' : '';
     return (
         <ReferFormField className="referral-form-field">
-            <label
-                htmlFor={props.name}
-                className={
-                    focus.isFocused || focus.length > 0 ? 'is-focused' : ''
-                }
-            >
+            <label htmlFor={props.name} className={`${isFocused} ${isError}`}>
                 {props.label}
             </label>
             <input
+                style={props.errors ? { borderColor: '#f04d46' } : {}}
                 id={props.id}
                 name={props.name}
                 type={props.type}
@@ -32,6 +29,7 @@ const Input: FC = (props: any) => {
                     })
                 }
             />
+            {props.errors && <p className="err-msg">{props.errors.message}</p>}
         </ReferFormField>
     );
 };
