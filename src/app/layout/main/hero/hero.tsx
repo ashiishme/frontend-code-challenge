@@ -15,7 +15,7 @@ const Hero: FC = () => {
                     <div className="greet-author">
                         <HeroGreet className="greet-text">
                             Hello
-                            <span className="author-first-name">Jimmy,</span>
+                            <span className="author-first-name"> Jimmy,</span>
                         </HeroGreet>
                     </div>
                     <div className="find-gym-cta">

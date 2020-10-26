@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, FormProvider } from 'react-hook-form';
 
 import Input from './input';
 import Select from './select';
@@ -9,16 +9,31 @@ import {
     ReferFormFooterText,
 } from './form.styled';
 
+type FormValues = {
+    fullname: string;
+    email: string;
+    phone: number;
+    gender: string;
+    address: string;
+    street_address: string;
+};
+
 const Form: FC = () => {
-    const { control } = useForm();
+    const methods = useForm<FormValues>();
+    const { handleSubmit } = methods;
+    const submitForm = (formData: FormValues) => console.log(formData);
 
     return (
-        <>
-            <form id="referral-form" action="#" className="referral-form">
+        <FormProvider {...methods}>
+            <form
+                id="referral-form"
+                onSubmit={handleSubmit(submitForm)}
+                className="referral-form"
+            >
                 <ReferFormRow className="refer-form-row">
                     <Controller
                         label="Name"
-                        control={control}
+                        register={methods.register}
                         id="fullname"
                         name="fullname"
                         type="text"
@@ -27,7 +42,7 @@ const Form: FC = () => {
                     />
                     <Controller
                         label="Email"
-                        control={control}
+                        register={methods.register}
                         id="email"
                         name="email"
                         type="email"
@@ -39,7 +54,7 @@ const Form: FC = () => {
                 <ReferFormRow className="refer-form-row">
                     <Controller
                         label="Phone Number"
-                        control={control}
+                        register={methods.register}
                         id="phone"
                         name="phone"
                         type="number"
@@ -48,9 +63,10 @@ const Form: FC = () => {
                     />
                     <Controller
                         label="Gender"
-                        control={control}
+                        register={methods.register}
                         id="gender"
                         name="gender"
+                        type="button"
                         defaultValue=""
                         as={<Select />}
                     />
@@ -59,7 +75,7 @@ const Form: FC = () => {
                 <ReferFormRow className="refer-form-row">
                     <Controller
                         label="Address"
-                        control={control}
+                        register={methods.register}
                         id="address"
                         name="address"
                         type="text"
@@ -68,7 +84,7 @@ const Form: FC = () => {
                     />
                     <Controller
                         label="Apt/Suite/Other"
-                        control={control}
+                        register={methods.register}
                         id="street-address"
                         name="street_address"
                         type="text"
@@ -83,13 +99,13 @@ const Form: FC = () => {
                         </ReferFormFooterText>
                     </div>
                     <div className="refer-form-button">
-                        <button className="btn btn-dark">
+                        <button type="submit" className="btn btn-dark">
                             <span>Refer</span>
                         </button>
                     </div>
                 </ReferFormFooter>
             </form>
-        </>
+        </FormProvider>
     );
 };
 

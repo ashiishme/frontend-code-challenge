@@ -31,7 +31,7 @@ const PackageList: FC = () => {
                 <GymPackageItem
                     key={index}
                     title={item.title}
-                    description={item.description}
+                    description={`${item.description.substr(0, 70)}...`}
                     price={item.price}
                 />
             ))}

@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 export const ReferFormField = styled.div`
     position: relative;
     justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
 
     :first-of-type {
         margin-right: 20px;

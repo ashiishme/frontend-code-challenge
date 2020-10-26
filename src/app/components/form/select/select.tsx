@@ -16,7 +16,7 @@ const items = [
     { value: "Don't Specify" },
 ];
 
-const Select: FC = () => {
+const Select: FC = ({ label, register, type, name }: any) => {
     const [selectItem, setSelectItem] = useState<any>('');
 
     const selectHandler = (selection: any) => {
@@ -28,14 +28,13 @@ const Select: FC = () => {
             <Downshift
                 onChange={(selection) => selectHandler(selection.value)}
                 selectedItem={selectItem}
-                itemToString={(items: any) => (items ? items.value : '')}
+                itemToString={(items: any) => (items ? items.value : 'Hello')}
             >
                 {({
                     isOpen,
                     getToggleButtonProps,
                     getItemProps,
-                    highlightedIndex,
-                    selectedItem: dsSelectedItem,
+                    getInputProps,
                     getLabelProps,
                 }) => (
                     <div className="form-select-wrapper">
@@ -43,21 +42,27 @@ const Select: FC = () => {
                             htmlFor="gender"
                             className={isOpen || selectItem ? 'is-focused' : ''}
                         >
-                            Gender
+                            {label}
                         </FormSelectLabel>
-                        <FormSelect
-                            id="gender"
-                            className="dropdown-button"
-                            {...getToggleButtonProps()}
-                        >
-                            <span>
-                                {selectItem !== ''
-                                    ? selectItem
-                                    : isOpen
-                                    ? 'Select item...'
-                                    : ''}
-                            </span>
-                        </FormSelect>
+                        <div>
+                            <FormSelect
+                                ref={register}
+                                id="gender"
+                                name={name}
+                                value={selectItem}
+                                type={type}
+                                className="dropdown"
+                                {...getToggleButtonProps()}
+                            >
+                                <span>
+                                    {selectItem !== ''
+                                        ? selectItem
+                                        : isOpen
+                                        ? 'Select item...'
+                                        : ''}
+                                </span>
+                            </FormSelect>
+                        </div>
                         <FormSelectListWrapper>
                             {isOpen ? (
                                 <div className="dropdown">

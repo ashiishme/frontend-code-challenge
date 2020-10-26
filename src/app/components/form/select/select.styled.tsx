@@ -4,14 +4,16 @@ export const FormSelectLabel = styled.label`
     z-index: 1;
 `;
 
-export const FormSelect = styled.div`
+export const FormSelect = styled.button`
     position: relative;
     background: #ffffff;
-    width: 328px;
-    height: 49px;
+    display: block;
+    width: 362px;
+    height: 50px;
     border: 1px solid rgba(60, 73, 138, 0.42);
     border-radius: 4px;
-    padding: 0 16px;
+    padding: 0 16px 8px 16px;
+    text-align: left;
 
     span {
         display: block;

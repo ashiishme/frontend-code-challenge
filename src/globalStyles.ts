@@ -24,7 +24,9 @@ const GlobalStyles = css`
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    button,
+    p {
         margin: 0;
         padding: 0;
     }
