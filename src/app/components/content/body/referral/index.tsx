@@ -1,79 +1,42 @@
-import React, { FC } from 'react';
-import styled from '@emotion/styled';
+import React, { FC, useState, FocusEvent } from 'react';
+import { useForm } from 'react-hook-form';
+import Downshift from 'downshift';
+
+import {
+    ReferralWrapper,
+    ReferForm,
+    FormTitle,
+    ReferFormRow,
+    ReferFormField,
+    ReferFormFooter,
+    ReferFormFooterText,
+    ReferFormBanner,
+    ReferFormBannerMedia,
+    FormSelectLabel,
+    FormSelect,
+    FormSelectListWrapper,
+    FormSelectItem,
+} from './styled';
 
 import { ReactComponent as ReferralSVG } from 'assets/svg/referral.svg';
 
-const ReferralWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-`;
-
-const ReferForm = styled.div`
-    margin-right: 38px;
-`;
-
-const FormTitle = styled.div`
-    margin-bottom: 16px;
-    font-weight: 500;
-    font-size: 14px;
-    color: #555555;
-`;
-
-const ReferFormRow = styled.div`
-    display: flex;
-    width: 100%;
-`;
-
-const ReferFormField = styled.div`
-    justify-content: space-between;
-
-    :first-of-type {
-        margin-right: 20px;
-    }
-
-    input {
-        width: 328px;
-        height: 49px;
-        border: 1px solid rgba(60, 73, 138, 0.42);
-        border-radius: 4px;
-        margin-bottom: 12px;
-    }
-`;
-
-const ReferFormFooter = styled.div`
-    border-top: 1px solid rgba(159, 159, 159, 0.4);
-    padding-top: 24.5px;
-    margin-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`;
-
-const ReferFormFooterText = styled.p`
-    font-style: italic;
-    font-size: 14px;
-    color: #b7b7b7;
-`;
-
-const ReferFormBanner = styled.div`
-    width: 308px;
-    background: #f4f5f7;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-
-const ReferFormBannerMedia = styled.div`
-    padding: 43px 67px;
-
-    svg {
-        width: 174px;
-        height: 190px;
-    }
-`;
+const items = [
+    { value: 'Male' },
+    { value: 'Female' },
+    { value: 'Other' },
+    { value: "Don't Specify" },
+];
 
 const Referral: FC = () => {
+    const { register, errors } = useForm();
+
+    const [focus, setFocus] = useState({ id: '', isFocused: false });
+    const [selectItem, setSelectItem] = useState<any>('');
+
+    const selectHandler = (selection: any) => {
+        setSelectItem(selection);
+    };
+
     return (
         <ReferralWrapper className='referral'>
             <ReferForm className='refer-form'>
@@ -83,28 +46,244 @@ const Referral: FC = () => {
                 <form id='referral-form' action='#' className='referral-form'>
                     <ReferFormRow className='refer-form-row'>
                         <ReferFormField className='referral-form-field'>
-                            <input type='text' />
+                            <label
+                                htmlFor='name'
+                                className={
+                                    focus.isFocused && focus.id === 'name'
+                                        ? 'is-focused'
+                                        : ''
+                                }
+                            >
+                                Name
+                            </label>
+                            <input
+                                id='name'
+                                name='name'
+                                ref={register({ required: true, minLength: 2 })}
+                                type='text'
+                                onFocus={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused: true,
+                                    })
+                                }
+                                onBlur={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused:
+                                            e.target.value.length !== 0
+                                                ? true
+                                                : false,
+                                    })
+                                }
+                            />
                         </ReferFormField>
                         <ReferFormField className='referral-form-field'>
-                            <input type='text' />
+                            <label
+                                htmlFor='email'
+                                className={
+                                    focus.isFocused && focus.id === 'email'
+                                        ? 'is-focused'
+                                        : ''
+                                }
+                            >
+                                Email
+                            </label>
+                            <input
+                                id='email'
+                                name='email'
+                                ref={register({ required: true })}
+                                type='email'
+                                onFocus={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused: true,
+                                    })
+                                }
+                                onBlur={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused:
+                                            e.target.value.length !== 0
+                                                ? true
+                                                : false,
+                                    })
+                                }
+                            />
                         </ReferFormField>
                     </ReferFormRow>
 
                     <ReferFormRow className='refer-form-row'>
                         <ReferFormField className='referral-form-field'>
-                            <input type='text' />
+                            <label
+                                htmlFor='phone'
+                                className={
+                                    focus.isFocused && focus.id === 'phone'
+                                        ? 'is-focused'
+                                        : ''
+                                }
+                            >
+                                Phone Number
+                            </label>
+                            <input
+                                id='phone'
+                                name='phone'
+                                ref={register}
+                                type='number'
+                                onFocus={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused: true,
+                                    })
+                                }
+                                onBlur={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused:
+                                            e.target.value.length !== 0
+                                                ? true
+                                                : false,
+                                    })
+                                }
+                            />
                         </ReferFormField>
                         <ReferFormField className='referral-form-field'>
-                            <input type='text' />
+                            <Downshift
+                                onChange={(selection) =>
+                                    selectHandler(selection.value)
+                                }
+                                selectedItem={selectItem}
+                                itemToString={(items: any) =>
+                                    items ? items.value : ''
+                                }
+                            >
+                                {({
+                                    isOpen,
+                                    getToggleButtonProps,
+                                    getItemProps,
+                                    highlightedIndex,
+                                    selectedItem: dsSelectedItem,
+                                    getLabelProps,
+                                }) => (
+                                    <div className='form-select-wrapper'>
+                                        <FormSelectLabel
+                                            htmlFor='gender'
+                                            className={
+                                                isOpen || selectItem
+                                                    ? 'is-focused'
+                                                    : ''
+                                            }
+                                        >
+                                            Gender
+                                        </FormSelectLabel>
+                                        <FormSelect
+                                            id='gender'
+                                            className='dropdown-button'
+                                            {...getToggleButtonProps()}
+                                        >
+                                            <span>
+                                                {selectItem !== ''
+                                                    ? selectItem
+                                                    : isOpen
+                                                    ? 'Select item...'
+                                                    : ''}
+                                            </span>
+                                        </FormSelect>
+                                        <FormSelectListWrapper>
+                                            {isOpen ? (
+                                                <div className='dropdown'>
+                                                    {items.map(
+                                                        (item, index) => (
+                                                            <FormSelectItem
+                                                                className='dropdown-item'
+                                                                {...getItemProps(
+                                                                    {
+                                                                        key: index,
+                                                                        index,
+                                                                        item,
+                                                                    }
+                                                                )}
+                                                            >
+                                                                {item.value}
+                                                            </FormSelectItem>
+                                                        )
+                                                    )}
+                                                </div>
+                                            ) : null}
+                                        </FormSelectListWrapper>
+                                    </div>
+                                )}
+                            </Downshift>
                         </ReferFormField>
                     </ReferFormRow>
 
                     <ReferFormRow className='refer-form-row'>
                         <ReferFormField className='referral-form-field'>
-                            <input type='text' />
+                            <label
+                                htmlFor='address'
+                                className={
+                                    focus.isFocused && focus.id === 'address'
+                                        ? 'is-focused'
+                                        : ''
+                                }
+                            >
+                                Address
+                            </label>
+                            <input
+                                id='address'
+                                name='address'
+                                ref={register}
+                                type='text'
+                                onFocus={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused: true,
+                                    })
+                                }
+                                onBlur={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused:
+                                            e.target.value.length !== 0
+                                                ? true
+                                                : false,
+                                    })
+                                }
+                            />
                         </ReferFormField>
                         <ReferFormField className='referral-form-field'>
-                            <input type='text' />
+                            <label
+                                htmlFor='street-address'
+                                className={
+                                    focus.isFocused &&
+                                    focus.id === 'street-address'
+                                        ? 'is-focused'
+                                        : ''
+                                }
+                            >
+                                Apt/Suite/Other
+                            </label>
+                            <input
+                                id='street-address'
+                                name='street_address'
+                                ref={register}
+                                type='text'
+                                onFocus={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused: true,
+                                    })
+                                }
+                                onBlur={(e) =>
+                                    setFocus({
+                                        id: e.target.id,
+                                        isFocused:
+                                            e.target.value.length !== 0
+                                                ? true
+                                                : false,
+                                    })
+                                }
+                            />
                         </ReferFormField>
                     </ReferFormRow>
                     <ReferFormFooter className='form-footer'>
