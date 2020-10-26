@@ -26,7 +26,7 @@ const package_list: PackageList = [
 
 const PackageList: FC = () => {
     return (
-        <ul className='package-list'>
+        <ul className="package-list">
             {package_list.map((item: PackageItem, index: number) => (
                 <GymPackageItem
                     key={index}

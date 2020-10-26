@@ -4,7 +4,7 @@ import Main from 'app/layout/main';
 
 const App: FC = () => {
     return (
-        <div className='app-container'>
+        <div className="app-container">
             <Sidebar />
             <Main />
         </div>

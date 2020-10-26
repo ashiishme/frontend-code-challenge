@@ -1,4 +1,4 @@
 export {
     ContentHeaderContext,
     useContentHeaderContext,
-} from './useSectionHeader';
+} from './useContentHeader';
