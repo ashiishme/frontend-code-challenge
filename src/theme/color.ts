@@ -5,16 +5,15 @@ const color = {
         main: '#262758',
         light: '#4042B1',
     },
+    alice_blue: '#ECF4F9',
+    brandy_punch: '#4648c3',
     error: '#F2706A',
 };
 
 export default color;
 
 // export const color = {
-//     primary: '#262758',
-//     white: '#FFFFFF',
 //     grey: '#858585',
-//     error: '#F2706A',
 //     davy_grey: '#555555',
 //     night_rider: '#2C2C2C',
 //     whisper: '#ECECEC',

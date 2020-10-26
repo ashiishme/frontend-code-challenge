@@ -15,8 +15,8 @@ export const NavList = styled.ul`
         a {
             margin-left: 40px;
             text-decoration: none;
-            font-size: 12px;
-            color: #ffffff;
+            font-size: ${(props) => props.theme.font.size.xsmall};
+            color: ${(props) => props.theme.color.white};
             display: block;
             line-height: 47px;
         }

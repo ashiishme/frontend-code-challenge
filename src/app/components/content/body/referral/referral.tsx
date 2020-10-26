@@ -8,7 +8,7 @@ import {
     FormTitle,
     ReferFormBanner,
     ReferFormBannerMedia,
-} from './styled';
+} from './referral.styled';
 
 import { ReactComponent as ReferralSVG } from 'assets/svg/referral.svg';
 

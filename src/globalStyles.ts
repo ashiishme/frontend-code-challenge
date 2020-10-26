@@ -1,19 +1,30 @@
-const GlobalStyles = `
+import { css } from '@emotion/core';
+import theme from 'theme';
+
+const GlobalStyles = css`
     @import-normalize;
 
-    html, body {
+    html,
+    body {
         height: 100%;
     }
 
     body {
         margin: 0;
-        font-family: 'Inter', sans-serif;
+        font-family: ${theme.font.family.inter};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background: #ffffff;
+        background: ${theme.color.white};
     }
 
-    figure, ul, h1, h2, h3, h4, h5, h6 {
+    figure,
+    ul,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin: 0;
         padding: 0;
     }
@@ -48,7 +59,7 @@ const GlobalStyles = `
 
     .btn {
         border: 0;
-        background: #ecf4f9;
+        background: ${theme.color.alice_blue};
         border-radius: 25px;
         text-align: center;
         width: 192px;
@@ -56,29 +67,29 @@ const GlobalStyles = `
     }
 
     .btn:hover {
-        background: #4648c3;
+        background: ${theme.color.brandy_punch};
     }
 
     .btn:hover span {
-        color: #ffffff;
+        color: ${theme.color.white};
     }
 
     .btn-dark {
-        background: #262758;
+        background: ${theme.color.primary.main};
     }
 
     .btn span {
-        color: #262758;
+        color: ${theme.color.primary.main};
         text-transform: uppercase;
         font-variant: normal;
         font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
+        font-weight: ${theme.font.weight.bold};
+        font-size: ${theme.font.size.small};
         line-height: 21px;
     }
 
     .btn-dark span {
-        color: #ffffff;
+        color: ${theme.color.white};
         text-transform: uppercase;
     }
 `;

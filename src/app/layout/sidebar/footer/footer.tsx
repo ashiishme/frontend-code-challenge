@@ -13,7 +13,7 @@ import {
     MentorBody,
     MentorFooterTitle,
     JimmyPageIcons,
-} from './styled';
+} from './footer.styled';
 
 const Footer: FC = () => {
     return (

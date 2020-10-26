@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './globalStyles.ts';
 import App from 'app';
 import { ThemeProvider } from 'emotion-theming';
 import theme from 'theme';
 import { Global } from '@emotion/core';
-import GlobalStyles from 'globalStyles';
+import GlobalStyles from './globalStyles';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

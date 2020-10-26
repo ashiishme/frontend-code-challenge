@@ -1,12 +1,13 @@
 import React, { FC, useState } from 'react';
 import Downshift from 'downshift';
+
+import { ReferFormField } from 'app/components/styled';
 import {
     FormSelectLabel,
     FormSelect,
     FormSelectListWrapper,
     FormSelectItem,
-    ReferFormField,
-} from 'app/components/styled';
+} from './select.styled';
 
 const items = [
     { value: 'Male' },
@@ -15,7 +16,7 @@ const items = [
     { value: "Don't Specify" },
 ];
 
-const Select: FC = (props: any) => {
+const Select: FC = () => {
     const [selectItem, setSelectItem] = useState<any>('');
 
     const selectHandler = (selection: any) => {

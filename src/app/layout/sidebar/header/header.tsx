@@ -8,7 +8,7 @@ import {
     AuthorName,
     AuthorProfile,
     ProfileWrapper,
-} from './styled';
+} from './header.styled';
 
 const Header: FC = () => {
     return (

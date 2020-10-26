@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 
-import { AppNavigation, NavList } from './styled';
+import { AppNavigation, NavList } from './navigation.styled';
 import NavItem from 'app/components/list/nav-item';
 
 type NavItemProps = {

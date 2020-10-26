@@ -11,7 +11,7 @@ const font = {
         xxxlarge: 60,
     },
     family: {
-        sans: 'Inter, sans-serif',
+        inter: 'Inter, sans-serif',
     },
     weight: {
         normal: 400,

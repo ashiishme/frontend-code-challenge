@@ -12,7 +12,7 @@ interface DefaultTheme {
             xxxlarge: number;
         };
         family: {
-            sans: string;
+            inter: string;
         };
         weight: {
             normal: number;
@@ -27,6 +27,8 @@ interface DefaultTheme {
             main: string;
             light: string;
         };
+        alice_blue: string;
+        brandy_punch: string;
         error: string;
     };
 }

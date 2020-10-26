@@ -1,14 +1,13 @@
 import React, { FC } from 'react';
-
 import { useForm, Controller } from 'react-hook-form';
 
 import Input from './input';
+import Select from './select';
 import {
     ReferFormRow,
     ReferFormFooter,
     ReferFormFooterText,
-} from 'app/components/styled';
-import Select from './select';
+} from './form.styled';
 
 const Form: FC = () => {
     const { control } = useForm();
