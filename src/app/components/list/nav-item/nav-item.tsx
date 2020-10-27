@@ -14,6 +14,7 @@ const NavItem: FC<{
             className={`nav-item ${props.isActive ? 'active-nav' : ''}`}
             onClick={props.onClick}
         >
+            {/* make a valid href props with url fragment based on nav name */}
             <a href={`#${props.name.replace(/ /g, '-').toLowerCase()}`}>
                 {props.name}
             </a>

@@ -28,7 +28,7 @@ const Select: FC = ({ label, register, type, name, errors }: any) => {
             <Downshift
                 onChange={(selection) => selectHandler(selection.value)}
                 selectedItem={selectItem}
-                itemToString={(items: any) => (items ? items.value : 'Hello')}
+                itemToString={(items: any) => (items ? items.value : '')}
             >
                 {({
                     isOpen,

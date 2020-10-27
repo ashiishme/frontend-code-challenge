@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import GymPackageItem from 'app/components/list/gym-package';
 
-type PackageList = PackageItem[];
+type PackageListProps = PackageItem[];
 
-const package_list: PackageList = [
+const package_list: PackageListProps = [
     {
         title: 'Pilates',
         description:

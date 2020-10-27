@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 
+// Content header context
 export const ContentHeaderContext = createContext({
     title: '',
     description: '',

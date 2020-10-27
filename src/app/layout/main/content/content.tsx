@@ -13,12 +13,14 @@ const SectionContent = styled.div`
 `;
 
 const Content: FC = () => {
+    // get the context data from provider
     const { context } = useContentHeaderContext();
 
     return (
         <SectionContent className="section-content section-packages container section-pad-r">
             <div className="section-pacakges-wrapper section-pad-l">
                 <ContentHeader />
+                {/* Conditionally render based on context */}
                 <ContentBody>
                     {context === 'packages' ? (
                         <PackageList />

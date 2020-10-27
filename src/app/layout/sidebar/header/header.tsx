@@ -15,7 +15,7 @@ const Header: FC = () => {
         <AppHeader className="app-header">
             <SidebarHead className="sidebar-head">
                 <AuthorAvatar className="author-avatar">
-                    <img src={Avatar} alt="User Profile Image" />
+                    <img src={Avatar} alt="User Profile Avatar" />
                 </AuthorAvatar>
                 <div className="author-name-wrapper">
                     <AuthorName className="author-name">

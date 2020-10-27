@@ -1,3 +1,4 @@
+// Default theme interface
 interface DefaultTheme {
     font: {
         size: {

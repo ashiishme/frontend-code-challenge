@@ -3,6 +3,7 @@ import Hero from 'app/layout/main/hero';
 import SectionCard from 'app/layout/main/section-card';
 import Content from 'app/layout/main/content';
 
+// Context for passing data
 import { ContentHeaderContext } from 'app/hooks';
 
 const Main: FC = () => {
@@ -11,6 +12,7 @@ const Main: FC = () => {
             <section className="app-section section-pad-b">
                 <Hero />
                 <SectionCard />
+                {/* provide data to content header */}
                 <ContentHeaderContext.Provider
                     value={{
                         title: 'Recommended Tour Packages',

@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react';
 import { AppNavigation, NavList } from './navigation.styled';
 import NavItem from 'app/components/list/nav-item';
 
+// Type for nav item
 type NavItemProps = {
     name: string;
 };
@@ -22,6 +23,7 @@ const nav_item: navItem = [
 ];
 
 const Navigation: FC = () => {
+    // keep index state to detect the current nav
     const [active, setActive] = useState<NavState>({ index: 0 });
 
     const toggleActive = (i: number) => {

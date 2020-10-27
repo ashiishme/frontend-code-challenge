@@ -28,6 +28,8 @@ const Form: FC = () => {
     const methods = useForm<FormValues>();
     const { handleSubmit } = methods;
     const submitForm = (formData: FormValues) => {
+        // set state show success popup with user information
+        console.log(formData);
         setSuccess({ status: true, data: formData });
     };
     return (
@@ -163,12 +165,17 @@ const Form: FC = () => {
                         </ReferFormFooterText>
                     </div>
                     <div className="refer-form-button">
-                        <button type="submit" className="btn btn-dark">
+                        <button
+                            disabled={!success.status}
+                            type="submit"
+                            className="btn btn-dark"
+                        >
                             <span>Refer</span>
                         </button>
                     </div>
                 </ReferFormFooter>
             </form>
+            {/* Show popup if form submission is valid */}
             {success.status && (
                 <FormPopUp>
                     <span
