@@ -41,10 +41,12 @@ const Select: FC = ({ label, register, type, name, errors }: any) => {
                         <FormSelectLabel
                             htmlFor="gender"
                             className={isOpen || selectItem ? 'is-focused' : ''}
+                            style={errors ? { color: '#f04d46' } : {}}
                         >
                             {label}
                         </FormSelectLabel>
                         <FormSelect
+                            style={errors ? { borderColor: '#f04d46' } : {}}
                             ref={register}
                             id="gender"
                             name={name}
@@ -67,7 +69,11 @@ const Select: FC = ({ label, register, type, name, errors }: any) => {
                                 <div className="dropdown">
                                     {items.map((item, index) => (
                                         <FormSelectItem
-                                            className="dropdown-item"
+                                            className={`dropdown-item ${
+                                                selectItem === item.value
+                                                    ? 'is-selected'
+                                                    : ''
+                                            }`}
                                             {...getItemProps({
                                                 key: index,
                                                 index,

@@ -6,6 +6,7 @@ import NavItem from 'app/components/list/nav-item';
 // Type for nav item
 type NavItemProps = {
     name: string;
+    notification: number | boolean;
 };
 
 type navItem = NavItemProps[];
@@ -15,11 +16,11 @@ type NavState = {
 };
 
 const nav_item: navItem = [
-    { name: 'Dashboard' },
-    { name: 'Tasks' },
-    { name: 'Gym Clubs' },
-    { name: 'Your Connections' },
-    { name: 'Settings' },
+    { name: 'Dashboard', notification: false },
+    { name: 'Tasks', notification: 2 },
+    { name: 'Gym Clubs', notification: false },
+    { name: 'Your Connections', notification: false },
+    { name: 'Settings', notification: false },
 ];
 
 const Navigation: FC = () => {
@@ -37,6 +38,7 @@ const Navigation: FC = () => {
                     <NavList className="nav-list">
                         {nav_item.map((item, index: number) => (
                             <NavItem
+                                notification={item.notification}
                                 key={index}
                                 name={item.name}
                                 isActive={active.index === index}

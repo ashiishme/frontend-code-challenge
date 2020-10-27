@@ -19,6 +19,15 @@ export const NavList = styled.ul`
             color: ${(props) => props.theme.color.white};
             display: block;
             line-height: 47px;
+
+            span {
+                margin-left: 12px;
+                background: #ffc933;
+                border-radius: 9px;
+                padding: 1px 12px;
+                font-size: 12px;
+                color: #2c2c2c;
+            }
         }
     }
 

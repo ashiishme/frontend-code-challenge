@@ -31,6 +31,7 @@ export const FormPopUp = styled.div`
     border-radius: 0px 23px 0px 24px;
     color: ${(props) => props.theme.color.white};
     background: ${(props) => props.theme.color.primary.light};
+    z-index: 3;
 
     span {
         position: absolute;

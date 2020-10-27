@@ -15,6 +15,7 @@ export const FormSelect = styled.button`
     padding: 0 16px 8px 16px;
     text-align: left;
     margin-bottom: 10px;
+    outline: 0;
 
     span {
         display: block;
@@ -27,9 +28,12 @@ export const FormSelect = styled.button`
 
 export const FormSelectListWrapper = styled.div`
     position: absolute;
-    margin-top: 8px;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
+
+    & .is-selected {
+        background: #ecf4f9;
+    }
 `;
 
 export const FormSelectItem = styled.div`
@@ -39,4 +43,9 @@ export const FormSelectItem = styled.div`
     border-radius: 4px 4px 0px 0px;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
+
+    :hover {
+        background: #f4f5f7;
+    }
 `;
