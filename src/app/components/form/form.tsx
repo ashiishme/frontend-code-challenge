@@ -28,21 +28,21 @@ const Form: FC = () => {
     const methods = useForm<FormValues>();
     const { handleSubmit } = methods;
     const submitForm = (formData: FormValues) => {
-        // set state show success popup with user information
-        console.log(formData);
         setSuccess({ status: true, data: formData });
     };
     return (
         <FormProvider {...methods}>
             <form
                 id="referral-form"
-                onSubmit={handleSubmit(submitForm)}
                 className="referral-form"
+                onSubmit={handleSubmit(submitForm)}
             >
                 <ReferFormRow className="refer-form-row">
                     <Controller
                         label="Name"
-                        register={methods.register({
+                        control={methods.control}
+                        register={methods.register}
+                        rules={{
                             required: {
                                 value: true,
                                 message: 'Full name is required.',
@@ -52,7 +52,7 @@ const Form: FC = () => {
                                 message:
                                     'Invalid full name, must be greater than 2 characters.',
                             },
-                        })}
+                        }}
                         id="fullname"
                         name="fullname"
                         type="text"
@@ -66,7 +66,9 @@ const Form: FC = () => {
                     />
                     <Controller
                         label="Email"
-                        register={methods.register({
+                        control={methods.control}
+                        register={methods.register}
+                        rules={{
                             required: {
                                 value: true,
                                 message: 'Email is required.',
@@ -75,7 +77,7 @@ const Form: FC = () => {
                                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                 message: 'Invalid email address',
                             },
-                        })}
+                        }}
                         id="email"
                         name="email"
                         type="email"
@@ -90,7 +92,9 @@ const Form: FC = () => {
                 <ReferFormRow className="refer-form-row">
                     <Controller
                         label="Phone Number"
-                        register={methods.register({
+                        control={methods.control}
+                        register={methods.register}
+                        rules={{
                             required: {
                                 value: true,
                                 message: 'Phone number is required.',
@@ -99,7 +103,7 @@ const Form: FC = () => {
                                 value: /^[0-9]{10}$/i,
                                 message: 'Invalid phone number',
                             },
-                        })}
+                        }}
                         id="phone"
                         name="phone"
                         type="number"
@@ -111,12 +115,14 @@ const Form: FC = () => {
                     />
                     <Controller
                         label="Gender"
-                        register={methods.register({
+                        control={methods.control}
+                        register={methods.register}
+                        rules={{
                             required: {
                                 value: true,
                                 message: 'Gender is required.',
                             },
-                        })}
+                        }}
                         id="gender"
                         name="gender"
                         type="button"
@@ -131,12 +137,14 @@ const Form: FC = () => {
                 <ReferFormRow className="refer-form-row">
                     <Controller
                         label="Address"
-                        register={methods.register({
+                        control={methods.control}
+                        register={methods.register}
+                        rules={{
                             required: {
                                 value: true,
                                 message: 'Address is required.',
                             },
-                        })}
+                        }}
                         id="address"
                         name="address"
                         type="text"
@@ -150,6 +158,7 @@ const Form: FC = () => {
                     />
                     <Controller
                         label="Apt/Suite/Other"
+                        control={methods.control}
                         register={methods.register()}
                         id="street-address"
                         name="street_address"
@@ -166,8 +175,8 @@ const Form: FC = () => {
                     </div>
                     <div className="refer-form-button">
                         <button
-                            disabled={!success.status}
                             type="submit"
+                            name="button"
                             className="btn btn-dark"
                         >
                             <span>Refer</span>
