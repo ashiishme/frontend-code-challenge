@@ -9,12 +9,25 @@ import TrackProgressIcon from 'assets/images/card-icon-3.png';
 
 const SectionCardWrapper = styled.div`
     margin-top: -46px;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        margin-top: 20px;
+    }
 `;
 
 const CardContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        width: 100%;
+    }
 `;
 
 const SectionCard: FC = () => {

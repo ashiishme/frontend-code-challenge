@@ -10,6 +10,14 @@ import Referral from 'app/components/content/body/referral';
 
 const SectionContent = styled.div`
     margin-top: 40px;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        margin-top: 0px;
+    }
+
+    @media ${(props) => props.theme.breakpoints.tablet} {
+        width: 100%;
+    }
 `;
 
 const Content: FC = () => {

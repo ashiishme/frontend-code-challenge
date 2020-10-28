@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import styled from '@emotion/styled';
+
 import Hero from 'app/layout/main/hero';
 import SectionCard from 'app/layout/main/section-card';
 import Content from 'app/layout/main/content';
@@ -6,9 +8,13 @@ import Content from 'app/layout/main/content';
 // Context for passing data
 import { ContentHeaderContext } from 'app/hooks';
 
+const MainWrapper = styled.main`
+    width: 100%;
+`;
+
 const Main: FC = () => {
     return (
-        <main>
+        <MainWrapper>
             <section className="app-section section-pad-b">
                 <Hero />
                 <SectionCard />
@@ -34,7 +40,7 @@ const Main: FC = () => {
                     <Content />
                 </ContentHeaderContext.Provider>
             </section>
-        </main>
+        </MainWrapper>
     );
 };
 

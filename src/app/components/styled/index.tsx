@@ -45,6 +45,14 @@ export const ReferFormField = styled.div`
             border-color: #3c498a;
             font-weight: 500;
         }
+
+        @media ${(props) => props.theme.breakpoints.phone} {
+            width: 93.5%;
+        }
+
+        @media ${(props) => props.theme.breakpoints.tablet} {
+            width: 90%;
+        }
     }
 
     label {

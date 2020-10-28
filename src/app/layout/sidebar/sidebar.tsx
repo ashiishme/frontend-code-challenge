@@ -16,11 +16,22 @@ const SidebarWrapper = styled.div`
     width: 223px;
     height: 100%;
     overflow: visible;
+
+    &.active-sidebar {
+        margin-left: 0px;
+    }
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        margin-left: -223px;
+        transition: 0.5s all;
+    }
 `;
 
-const Sidebar: FC = () => {
+const Sidebar: FC<{ isMenuActive: boolean }> = ({ isMenuActive }) => {
     return (
-        <SidebarWrapper className="sidebar">
+        <SidebarWrapper
+            className={`sidebar ${isMenuActive ? 'active-sidebar' : ''}`}
+        >
             <Header />
             <Navigation />
             <Footer />

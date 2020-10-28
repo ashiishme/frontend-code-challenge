@@ -24,6 +24,14 @@ export const FormSelect = styled.button`
         color: #2c2c2c;
         font-weight: 500;
     }
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        width: 100%;
+    }
+
+    @media ${(props) => props.theme.breakpoints.tablet} {
+        width: 100%;
+    }
 `;
 
 export const FormSelectListWrapper = styled.div`

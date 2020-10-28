@@ -32,4 +32,9 @@ interface DefaultTheme {
         brandy_punch: string;
         error: string;
     };
+    breakpoints: {
+        phone: string;
+        tablet: string;
+        desktop: string;
+    };
 }

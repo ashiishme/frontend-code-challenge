@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 export const ReferFormRow = styled.div`
     display: flex;
     width: 100%;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        flex-direction: column;
+    }
 `;
 
 export const ReferFormFooter = styled.div`
@@ -12,6 +16,18 @@ export const ReferFormFooter = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        padding-top: 20px;
+        margin-top: 20px;
+        flex-direction: column;
+        width: 100%;
+
+        .refer-form-button {
+            margin-top: 1rem;
+            width: 100%;
+        }
+    }
 `;
 
 export const ReferFormFooterText = styled.p`

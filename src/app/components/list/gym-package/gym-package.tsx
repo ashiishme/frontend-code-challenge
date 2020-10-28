@@ -7,6 +7,7 @@ import {
     PackageItemIcon,
     PackageItemTitle,
     PackageItemDescription,
+    PackagePrice,
     PackagePriceTitle,
     PackagePriceAmount,
 } from './gym-package.styled';
@@ -33,12 +34,12 @@ const GymPackageItem: FC<PackageItem> = ({
                         </PackageItemDescription>
                     </div>
                 </PackageItemDetails>
-                <div className="package-item-price">
+                <PackagePrice className="package-item-price">
                     <PackagePriceTitle className="price-title">
                         Estimated Price
                     </PackagePriceTitle>
                     <PackagePriceAmount className="price-amount">{`${price}/6 mo.`}</PackagePriceAmount>
-                </div>
+                </PackagePrice>
                 <div className="package-item-button">
                     <button className="btn">
                         <span>Order Now</span>

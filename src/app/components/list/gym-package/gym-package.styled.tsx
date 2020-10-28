@@ -8,6 +8,10 @@ export const PackageListItem = styled.li`
     border: 1px solid #ececec;
     border-radius: 4px;
     margin-bottom: 8px;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        height: auto;
+    }
 `;
 
 export const PackageListItemWrapper = styled.div`
@@ -16,11 +20,23 @@ export const PackageListItemWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 22px 32px;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 `;
 
 export const PackageItemDetails = styled.div`
     display: flex;
     align-items: center;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
 `;
 
 export const PackageItemIcon = styled.div`
@@ -35,6 +51,11 @@ export const PackageItemIcon = styled.div`
 
     svg {
         fill: #3d3fa8;
+    }
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        margin-right: 0px;
+        margin-bottom: 1rem;
     }
 `;
 
@@ -51,6 +72,12 @@ export const PackageItemDescription = styled.div`
         font-size: 12px;
         font-weight: 500;
         color: #858585;
+    }
+`;
+
+export const PackagePrice = styled.div`
+    @media ${(props) => props.theme.breakpoints.phone} {
+        margin-bottom: 2rem;
     }
 `;
 

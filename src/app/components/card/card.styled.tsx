@@ -6,6 +6,16 @@ export const CardContainer = styled.div`
     box-shadow: 0px 5px 10px #a9a9a933;
     border-radius: 4px;
     cursor: pointer;
+
+    @media ${(props) => props.theme.breakpoints.phone} {
+        width: 100%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    @media ${(props) => props.theme.breakpoints.tablet} {
+        width: 33.3%;
+    }
 `;
 
 export const CardWrapper = styled.div`

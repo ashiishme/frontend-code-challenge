@@ -7,6 +7,7 @@ const GlobalStyles = css`
     html,
     body {
         height: 100%;
+        width: 100%;
     }
 
     body {
@@ -37,6 +38,7 @@ const GlobalStyles = css`
 
     .app {
         position: relative;
+        min-width: 100%;
     }
 
     .container {
@@ -93,6 +95,34 @@ const GlobalStyles = css`
     .btn-dark span {
         color: ${theme.color.white};
         text-transform: uppercase;
+    }
+
+    @media ${theme.breakpoints.phone} {
+        .section-pad-l {
+            padding-left: 0px;
+        }
+
+        .section-pad-r {
+            padding-right: 0px;
+        }
+
+        .section-pad-t {
+            padding-top: 72px;
+        }
+
+        .section-pad-b {
+            padding-bottom: 52px;
+        }
+
+        .container {
+            padding: 10px 30px;
+        }
+
+        .btn {
+            width: 100%;
+            height: auto;
+            padding: 10px 20px;
+        }
     }
 `;
 
