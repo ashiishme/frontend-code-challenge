@@ -9,6 +9,8 @@ import {
     FormSelectItem,
 } from './select.styled';
 
+import { ReactComponent as DownArrowSVG } from 'assets/svg/down-arrow.svg';
+
 const items = [
     { value: 'Male' },
     { value: 'Female' },
@@ -45,6 +47,7 @@ const Select: FC = ({ label, register, type, name, errors }: any) => {
                         >
                             {label}
                         </FormSelectLabel>
+                        <DownArrowSVG />
                         <FormSelect
                             style={errors ? { borderColor: '#f04d46' } : {}}
                             ref={register}

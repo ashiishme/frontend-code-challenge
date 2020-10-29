@@ -68,4 +68,11 @@ export const ReferFormField = styled.div`
     .form-select-wrapper {
         width: 100%;
     }
+
+    svg {
+        position: absolute;
+        right: 16px;
+        top: 22px;
+        z-index: 1;
+    }
 `;
