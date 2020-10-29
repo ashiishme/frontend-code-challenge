@@ -98,6 +98,7 @@ const GlobalStyles = css`
     }
 
     @media ${theme.breakpoints.phone} {
+        
         .section-pad-l {
             padding-left: 0px;
         }
