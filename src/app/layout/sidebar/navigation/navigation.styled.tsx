@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Navigation styles comp
+ * Source filename  : navgation.styled.tsx
+ * Description      : Defines navgation components with emoiton styled
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 import styled from '@emotion/styled';
 
 export const AppNavigation = styled.div`

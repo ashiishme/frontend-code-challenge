@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Navigation component
+ * Source filename  : navigation.tsx
+ * Description      : Defines Navigation components with nav items
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 import React, { FC, useState } from 'react';
 
 import { AppNavigation, NavList } from './navigation.styled';

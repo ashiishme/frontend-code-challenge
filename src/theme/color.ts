@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Color
+ * Source filename  : color.ts
+ * Description      : Color definitions for theming support
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 const color = {
     white: '#FFFFFF',
     black: '#000000',

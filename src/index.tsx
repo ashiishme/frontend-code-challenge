@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : App Root
+ * Source filename  : index.tsx
+ * Description      : Root src file for application
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'app';

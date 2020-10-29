@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Fonts
+ * Source filename  : font.ts
+ * Description      : Fonts definition for theming support
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 const font = {
     size: {
         xxsmall: 10,

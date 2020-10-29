@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Sidebar root component
+ * Source filename  : sidebar.tsx
+ * Description      : Wraps all the sidebar components
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 

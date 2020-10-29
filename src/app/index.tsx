@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Components bootstraping
+ * Source filename  : app/index.tsx
+ * Description      : Bootstrap all the components to the root component
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 import React, { FC, useState } from 'react';
 import styled from '@emotion/styled';
 

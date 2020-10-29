@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Global Styles
+ * Source filename  : globalStyles.ts
+ * Description      : Global style for the application
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 import { css } from '@emotion/core';
 import theme from 'theme';
 
@@ -98,7 +106,6 @@ const GlobalStyles = css`
     }
 
     @media ${theme.breakpoints.phone} {
-        
         .section-pad-l {
             padding-left: 0px;
         }

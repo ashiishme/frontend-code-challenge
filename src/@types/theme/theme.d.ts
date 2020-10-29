@@ -1,3 +1,11 @@
+/**
+ * Project          : Frontend Code Challenge
+ * Module           : Theming Type definition
+ * Source filename  : theme.d.ts
+ * Description      : Default theming type definition of application
+ * Author           : Ashish Yadav <contact@ashiish.me>
+ *
+ */
 // Default theme interface
 interface DefaultTheme {
     font: {
